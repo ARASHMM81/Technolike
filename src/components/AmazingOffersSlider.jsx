@@ -80,7 +80,7 @@ export default function AmazingOffersSlider() {
             تکنوتایم
           </div>
 
-          <button className="font-bold flex items-center gap-2 text-sm text-gray-200 hover:text-white cursor-pointer">
+          <button className="font-bold flex items-center gap-2 text-sm text-gray-200 hover:text-white cursor-pointer" dir="rtl">
             نمایش همه
             <FiChevronLeft />
           </button>

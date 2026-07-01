@@ -106,11 +106,13 @@ export default function Header() {
 
             </div>
 
-              <img
-              src="/img/mainlogo2.svg"
-              alt="banner"
-              className="w-full h-full object-cover"
-/>
+              <a href="/">
+                <img
+                src="/img/mainlogo2.svg"
+                alt="logo"
+                className="w-full h-full object-cover cursor-pointer"
+                />
+              </a>
           </div>
         </div>
       </div>
