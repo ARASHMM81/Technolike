@@ -61,6 +61,24 @@ export default function HeroSlider() {
             className="w-full h-[420px] object-cover"
           />
         </SwiperSlide>
+                <SwiperSlide>
+          <img
+            src="/img/slider3.png"
+            className="w-full h-[420px] object-cover"
+          />
+        </SwiperSlide>
+                <SwiperSlide>
+          <img
+            src="/img/slider3.png"
+            className="w-full h-[420px] object-cover"
+          />
+        </SwiperSlide>
+                <SwiperSlide>
+          <img
+            src="/img/slider3.png"
+            className="w-full h-[420px] object-cover"
+          />
+        </SwiperSlide>
       </Swiper>
 
       {/* CUSTOM BUTTONS */}
