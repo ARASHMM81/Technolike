@@ -16,7 +16,7 @@ function App() {
     <>
       <Header />
 
-      <main className="pt-44">
+      <main className="pt-46">
         <HeroSlider />
       </main>
 
