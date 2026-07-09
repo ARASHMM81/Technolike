@@ -9,7 +9,7 @@ import BestMobiles from "./components/BestMobiles";
 import BigBanner from "./components/BigBanner";
 import BrandsSlider from "./components/BrandsSlider";
 
-import { banner1, banner2 } from "./Data/Banners";
+import { banner1, banner2 } from "./data/banners";
 
 function App() {
   return (
