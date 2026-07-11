@@ -1,99 +1,146 @@
-import { FiChevronLeft, FiCheckCircle } from "react-icons/fi";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function BrandsSlider() {
-  const brands = [
-    "/img/philips.png",
-    "/img/tsco.png",
-    "/img/beem.png",
-    "/img/energizer.png",
-    "/img/siliconpower.png",
-    "/img/tplink.png",
-    "/img/life.png",
-  ];
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-  return (
-    <section className="max-w-[1526px] mx-auto px-8 mt-8">
-      <div className="border border-[#D9E2F1] rounded-[28px] overflow-hidden bg-white">
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-        <div className="flex flex-row-reverse h-[130px]">
 
-          {/* RIGHT PANEL */}
+const products = [
+  {
+    id: 1,
+    title: "iPhone 15 Pro",
+    price: "75,000,000",
+    image: "/img/iphone.jpg",
+  },
+  {
+    id: 2,
+    title: "Samsung Galaxy S24",
+    price: "55,000,000",
+    image: "/img/samsung.jpg",
+  },
+  {
+    id: 3,
+    title: "MacBook Pro",
+    price: "120,000,000",
+    image: "/img/macbook.jpg",
+  },
+];
 
-          <div
-            className="
-              w-[270px]
-              shrink-0
-              bg-gradient-to-b
-              from-[#0C85C7]
-              to-[#213B86]
-              text-white
-              flex
-              flex-col
-              items-center
-              justify-center
-              gap-3
-            "
-          >
-            <FiCheckCircle size={42} />
 
-            <h2 className="text-3xl font-bold">
-              برندهای منتخب
-            </h2>
-          </div>
+export default function ProductSlider(){
 
-          {/* BRANDS */}
+return (
 
-          <div className="flex-1 flex items-center" dir="rtl">
+<div className="w-full">
 
-            {brands.map((brand, index) => (
-              <div
-                key={index}
-                className="
-                  flex-1
-                  h-full
-                  flex
-                  items-center
-                  justify-center
-                  border-l
-                  border-[#D9E2F1]
-                  relative
-                "
-              >
-                <img
-                  src={brand}
-                  alt="brand"
-                  className="
-                    max-w-[140px]
-                    max-h-[60px]
-                    object-contain
-                  "
-                />
-              </div>
-            ))}
+<Swiper
 
-            {/* ARROW */}
+modules={[
+Navigation,
+Pagination,
+Autoplay
+]}
 
-            <button
-              className="
-                absolute
-                left-14
-                w-12
-                h-12
-                rounded-full
-                bg-white
-                shadow-md
-                flex
-                items-center
-                justify-center
-                cursor-pointer
-              "
-            >
-              <FiChevronLeft size={24} />
-            </button>
+spaceBetween={20}
 
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+slidesPerView={4}
+
+navigation
+
+pagination={{
+clickable:true
+}}
+
+autoplay={{
+delay:3000
+}}
+
+breakpoints={{
+
+320:{
+slidesPerView:1
+},
+
+640:{
+slidesPerView:2
+},
+
+1024:{
+slidesPerView:4
+}
+
+}}
+
+>
+
+{
+products.map(product=>(
+
+
+<SwiperSlide key={product.id}>
+
+
+<div className="
+bg-white
+rounded-xl
+p-4
+shadow
+">
+
+<img
+
+src={product.image}
+
+alt={product.title}
+
+className="
+w-full
+h-48
+object-contain
+"
+
+/>
+
+
+<h3 className="
+mt-3
+font-bold
+">
+
+{product.title}
+
+</h3>
+
+
+<p className="
+mt-2
+text-red-600
+">
+
+{product.price}
+
+</p>
+
+
+</div>
+
+
+</SwiperSlide>
+
+
+))
+
+}
+
+
+</Swiper>
+
+
+</div>
+
+
+)
+
 }
